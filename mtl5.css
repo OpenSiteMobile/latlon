@@ -1,0 +1,203 @@
+/* Movable Type Ltd general stylesheet - version for html5 */
+
+body {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 75%;  /* adjust from default 16px (!) to 9pt (@ 96ppi) */
+  padding-left: 120px; /* left margin: note margin-left won't work in IE */
+  padding-right: 12px;
+  margin: 1em;
+  max-width: 72em;
+  line-height: 1.6;
+  background: white;
+  color: #333333;
+  }
+
+/* header class emulates header element */
+header,         .header     { margin-left: -120px; }
+header hr,      .header hr  { margin-top: -0.4em; }
+header img,     .header img { float: left; }
+header a:hover, .header a:hover { text-decoration: none; }
+
+/* footer class emulates footer element */
+footer, .footer { border-top: 1px solid #cccccc; color: #999999; margin-left: -120px; margin-top: 4em; }
+
+h1 {  /* page title */
+  font: italic 4em Garamond, "Times New Roman", Times, serif;
+  margin-top:    0;
+  margin-bottom: 0;
+  }
+
+h2 {  /* section / sub-head */
+  color: #333333;
+  font: 2.5em Impact, Tahoma, Arial, Helvetica, sans-serif;
+  text-align: right;
+  }
+
+h3 {  /* top-level 'content' header */
+  color: black;
+  font-size: 1.2em;
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+  }
+
+h4 {  /* second-level 'content' header (not currently used?) */
+  font-size: 0.95em;
+  font-style: normal;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+p {
+  margin-top:    0.8em;
+  margin-bottom: 0.8em;
+  }
+
+p, li, td  {
+  max-width:     64em; /* no one wants to read longer lines than that! */
+  /* whether it's better to have max-width on <p> or on <body> depends on page design... */
+  /* li right margin may exceed p right margin! */
+}
+
+table { }
+    tr { vertical-align: baseline; }
+    td { padding: 0 0.2em 0 0.2em; }
+
+ul { margin: -0.5em 0 0.5em 3.2em; list-style: outside disc url(http://www.movable-type.co.uk/images/listbullet.gif); }
+    li { max-width: 64em; }
+
+
+dt              { clear: left; float: left; font-weight: bold; width: 20%; }
+dd              { margin-left: 20%; }
+
+dd, dt          { padding-top: 1.5em; }
+
+dl dl dt        { text-indent: -1em; width: 33%; }
+dl dl dt:before { content: url(../images/listbullet.gif); }
+dl dl dd        { font-style: italic; margin-left: 33%; }
+
+img.right {
+  float: right;
+  }
+img.floatRight {
+  float: right;
+  }
+img.floatLeft {
+  float: left;
+  }
+
+/* even line spacing with sub/superscripts: www.cs.tut.fi/~jkorpela/www/linespacing.html */
+sup, sub { position: relative; font-size: 0.75em; vertical-align: 0; }
+sup      { bottom: 1ex; }
+sub      { top: 0.8ex; }  
+
+hr { 
+  background: #cccccc; 
+  border: 0; 
+  color: #cccccc; 
+  height: 2px;
+  margin-top: 2em; 
+  }
+hr.fullwidth {  /* rule running into margin */
+  margin-left: -120px;
+  }
+
+a {
+  color: #993300;  /* brick red */
+  font-weight: bold;
+  text-decoration: none;
+  }
+
+a img {
+  border: 0;
+  }
+small  { font-size: 0.75em; }
+.small {  /* typographic, not html5 <small>! */
+  font-size: 0.75em; 
+  }
+  
+a:visited {
+  font-weight: normal;
+  }
+
+a:hover {
+  text-decoration: underline;
+  }
+
+/* over-ride 'a' when inside h2 */
+h2 a {
+  color: #333333;
+  font-weight: normal;
+  }
+/* over-ride 'a:visited' when inside h2 */
+h2 a:visited {
+  color: #333333;
+  }
+
+.margin {
+  margin-left: -150px;
+  }
+
+tr.tableRule td {
+  border-top: 2px solid #CCCCCC;
+  }
+
+/* scripts pages */
+
+pre {
+  font-family: "Lucida Console", "Courier New", Courier, monospace;
+  font-size: 0.8em;
+  line-height: 1.4;
+  margin-left: 1cm;
+  margin-top:0;
+  }
+pre.fullwidth, p.fullwidth {  /* use margin to get full width of page */
+  margin-left: -80px;
+  }
+/* reset prettyprint defaults */
+pre.prettyprint { border: none; font-size: 0.8em; padding: 0; }
+
+.note {
+  font-size: 0.9em;
+  line-height: 1.5;
+  }
+
+.small-caps {
+  font-variant: small-caps;
+  }
+
+code, .code { /* in-line code frags */
+  font-family: "Lucida Console", "Courier New", Courier, monospace;
+  font-size: 0.9em;
+  }
+
+.align-right {
+  text-align: right;
+}
+
+form { }
+  fieldset { border: 1px solid #cccccc; }
+  legend { margin-left: 1em; padding: 0.5em; }
+  label { float: left; font-style: italic; width: 8em; }
+  input { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 95%; }
+form ul { list-style: none; margin: 1em; }
+form li { margin: 0.5em; }
+
+
+/* validation */
+label.error       { color: #990000; font-style: italic; margin-left: 1em; }
+input.error       { border: 1px dotted #990000; }
+
+span.rtl { /* obfuscate email */
+  unicode-bidi: bidi-override; 
+  direction: rtl; 
+  white-space: nowrap;
+  }
+
+/* suppress left margin for printing */
+@media print {
+  body                    { padding-left: 0; }
+  header, .header         { margin-left: 0; }
+  header img, .header img { display: none; }
+  pre.fullwidth           { margin-left: 0; }
+  footer, .footer         { margin-left: 0; }
+  }
